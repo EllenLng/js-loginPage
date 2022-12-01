@@ -41,16 +41,15 @@ function controllStatus(){
     
     const checkStatus = JSON.parse(localStorage.getItem("status"));
     let array = [];
-    for (const status in checkStatus) {                                //get users name
+    for (const status in checkStatus) {                                
         let inlog = checkStatus[status]; 
         array.push(inlog); 
     }  
-    const found = array.find(element => element ==="in" ); 
+    const found = array.find(element => element ==="in" );              //check if user is in 
     if (found)
     {
         console.log("inloggad");
-        loggedIn();
-            
+        loggedIn();    
     }
     else{
         console.log("utloggad");
@@ -76,7 +75,7 @@ function findLogin(userName, password){
             removeInlog();
             wrongUser.innerHTML="";
             wrongUser.style.color="red";
-            wrongUser.style.position= "absolut";                                //if user doesnt exist show text
+            wrongUser.style.position= "absolute";                                //if user doesnt exist show text
             wrongUser.style.margin = "70px";
             wrongUser.innerHTML="Wrong username/password please try again!";
             }   
@@ -157,7 +156,7 @@ function loggedOut(){
         
     })
     createBtn.addEventListener("click", () => {
-        toggleBox();                                           //show/hide create user
+        toggleBox();                                           //show/hide create user box
     })
 }
 
